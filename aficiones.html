@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aficiones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Aficiones</h1>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="cv.html">Currículum</a>
+            <a href="aficiones.html">Aficiones</a>
+            <a href="juego.html">Juego</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <nav class="nav-buttons" style="float: right;">
+            <button id="btn1" class="nav-btn">Iniciar Sesión</button>
+            <button id="btn2" class="nav-btn">Registrarse</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <p>En mi tiempo libre me gusta quedar con <em>amigos</em>, ya sea para ir a comer, pasear, etc.</p>
+            <p><img src="amigos.jpg" /></p>
+            
+            <p>También me gusta jugar a <strong>juegos</strong>. Actualmente, el que más juego es el <strong><em>Hearts of Iron IV</em>.</strong></p>
+            <p><img src="hoi4.jpg" /></p>
+        </section>
+    </main>
+
+    <section id="popup" class="popup" style="display: none;">
+        <p>Hola! Este texto es un placeholder y no tiene funcionalidad!</p>
+        <button id="close-btn" class="close-btn">Cerrar</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Marc Cortés Lon. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex'; // Mostrar el recuadro al hacer clic
+        });
+
+        document.getElementById('btn2').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex'; // Mostrar el recuadro al hacer clic
+        });
+
+        // Funcionalidad para cerrar el cuadro de texto
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none'; // Ocultar el recuadro
+        });
+
+        // Cerrar el cuadro de texto cuando se hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('popup')) {
+                document.getElementById('popup').style.display = 'none'; // Ocultar el recuadro
+            }
+        });
+    </script>
+</body>
+</html>

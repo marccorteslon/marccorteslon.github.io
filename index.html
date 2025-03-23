@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Página Personal</h1>
+        <nav class="navbar"> 
+            <ul> <!-- Enlaces a otras paginas -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cv.html">Currículum</a></li>
+                <li><a href="aficiones.html">Aficiones</a></li>
+                <li><a href="juego.html">Juego</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-buttons" style="float: right;">
+            <button id="btn1" class="nav-btn">Iniciar Sesión</button>
+            <button id="btn2" class="nav-btn">Registrarse</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sobre Mí</h2>
+            <img src="videojuegos.jpg">
+			<!-- Aquí no sabía si poner varios <p> para que el codigo fuera mas legible o varios <br> para optimizar el codigo, así que me he decantado por los <p> -->
+            <p>Bienvenido a mi página personal. Aquí puedes encontrar información sobre mis aficiones, mi trabajo y formas de contactarme.<br></p>
+            <p>Me llamo Marc, y soy un estudiante de programación.</p>
+			<p>Me gusta el desarrollo de videojuegos, más concretamente el ámbito de la programación y el game design.</p>
+			<p>Actualmente los lenguajes que estoy aprendiendo son: HTML, CSS, JavaScript, C++, C# y un poco de SQL.</p><br>
+            <img src="programacion.jpeg">
+        </section>
+    </main>
+
+    <!-- Cuadro de texto que aparecerá al hacer clic en los botones -->
+    <section id="popup" class="popup" style="display: none;">
+        <p>Hola! Este texto es un placeholder y no tiene funcionalidad!</p>
+        <!-- Botón para cerrar el cuadro de texto -->
+        <button id="close-btn" class="close-btn">Cerrar</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Personal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex'; // Mostrar el recuadro al hacer clic
+        });
+		
+        document.getElementById('btn2').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex'; // Mostrar el recuadro al hacer clic
+        });
+
+        // Funcionalidad para cerrar el cuadro de texto
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none'; // Ocultar el recuadro
+        });
+
+        // Cerrar el cuadro de texto cuando se hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('popup')) {
+                document.getElementById('popup').style.display = 'none'; // Ocultar el recuadro
+            }
+        });
+    </script>
+</body>
+</html>
